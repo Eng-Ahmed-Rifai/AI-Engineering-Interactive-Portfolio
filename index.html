@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineering & Autonomous Agents Interactive Portfolio | Ahmed Rifai</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        cyber: {
+                            bg: '#0b0f19',
+                            card: '#111827',
+                            border: '#1f2937',
+                            accent: '#38bdf8',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        code, pre {
+            font-family: 'Fira Code', monospace;
+        }
+        .glow-accent {
+            box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.3);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+        }
+        .node-active {
+            border-color: #38bdf8 !important;
+            background-color: rgba(56, 189, 248, 0.15) !important;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-cyber-bg text-gray-100 flex flex-col">
+
+    <!-- Top Navigation Bar -->
+    <header class="border-b border-cyber-border bg-cyber-card/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                    AR
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-white leading-tight">Ahmed Mohamed Abdullatif Rifai</h1>
+                    <p class="text-xs text-sky-400 font-medium">Senior AI & Autonomous Systems Portfolio</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-1.5"></span> DeepLearning.AI 100% Certified
+                </span>
+                <a href="https://github.com/Eng-Ahmed-Rifai/AI-Engineering-Interactive-Portfolio" target="_blank" class="px-3 py-1.5 rounded-lg bg-cyber-border hover:bg-gray-800 text-sm font-medium text-gray-200 transition flex items-center space-x-2 border border-gray-700">
+                    <i class="fab fa-github"></i>
+                    <span>Repository</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-10 border-b border-cyber-border bg-gradient-to-b from-cyber-card/40 to-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                Interactive Generative AI & Autonomous Agent Laboratories
+            </h2>
+            <p class="text-gray-400 max-w-3xl mx-auto text-base sm:text-lg mb-6">
+                Explore live, interactive simulations of modern AI engineering patterns: stateful LangGraph multi-agent cyclic loops, enterprise RAG chunking & vector retrieval, LangChain dynamic memory scaling, and Hugging Face open weights inference.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
+                <div class="px-3 py-1.5 rounded-lg bg-gray-800/80 border border-gray-700 text-gray-300">
+                    <i class="fas fa-project-diagram text-sky-400 mr-1.5"></i> LangGraph Cyclic State
+                </div>
+                <div class="px-3 py-1.5 rounded-lg bg-gray-800/80 border border-gray-700 text-gray-300">
+                    <i class="fas fa-database text-emerald-400 mr-1.5"></i> Production Vector RAG
+                </div>
+                <div class="px-3 py-1.5 rounded-lg bg-gray-800/80 border border-gray-700 text-gray-300">
+                    <i class="fas fa-link text-amber-400 mr-1.5"></i> LangChain Chains & Memory
+                </div>
+                <div class="px-3 py-1.5 rounded-lg bg-gray-800/80 border border-gray-700 text-gray-300">
+                    <i class="fas fa-robot text-purple-400 mr-1.5"></i> Open Source Hugging Face Hub
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Navigation Tabs -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6">
+        <div class="flex border-b border-cyber-border space-x-2 sm:space-x-8 overflow-x-auto pb-1" id="tabNav">
+            <button onclick="switchTab('langgraph')" id="btn-langgraph" class="tab-btn active px-4 py-3 text-sm font-semibold border-b-2 border-sky-400 text-sky-400 flex items-center space-x-2 whitespace-nowrap">
+                <i class="fas fa-diagram-project"></i>
+                <span>1. LangGraph Multi-Agent Simulator</span>
+            </button>
+            <button onclick="switchTab('rag')" id="btn-rag" class="tab-btn px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center space-x-2 whitespace-nowrap">
+                <i class="fas fa-search"></i>
+                <span>2. Interactive RAG & Chunker</span>
+            </button>
+            <button onclick="switchTab('chains')" id="btn-chains" class="tab-btn px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center space-x-2 whitespace-nowrap">
+                <i class="fas fa-brain"></i>
+                <span>3. Memory & Chains Benchmark</span>
+            </button>
+            <button onclick="switchTab('huggingface')" id="btn-huggingface" class="tab-btn px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center space-x-2 whitespace-nowrap">
+                <i class="fas fa-cube"></i>
+                <span>4. Hugging Face Models Hub</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Content Sections Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 flex-1">
+
+        <!-- TAB 1: LANGGRAPH SIMULATOR -->
+        <section id="tab-langgraph" class="space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Visual Graph Canvas -->
+                <div class="lg:col-span-8 bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
+                                <i class="fas fa-network-wired text-sky-400 mr-2"></i> LangGraph Cyclic State Machine Execution
+                            </h3>
+                            <span id="graphStatusBadge" class="px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-800 text-gray-300 border border-gray-700">
+                                Ready
+                            </span>
+                        </div>
+                        <p class="text-xs text-gray-400 mb-6">
+                            Step through the state machine. Watch state mutate across nodes: Planner -> Research -> Tool Execution -> Evaluator -> Human Approval Gate -> Final Report.
+                        </p>
+
+                        <!-- Visual Nodes Diagram -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                            <div id="node-planner" class="p-4 rounded-xl border border-gray-800 bg-gray-900/60 transition duration-300">
+                                <div class="text-xs font-bold text-sky-400 mb-1 flex items-center justify-between">
+                                    <span>1. PLANNER</span>
+                                    <i class="fas fa-list-check"></i>
+                                </div>
+                                <p class="text-xs text-gray-400">Decomposes task into atomic query dependencies.</p>
+                            </div>
+                            <div id="node-researcher" class="p-4 rounded-xl border border-gray-800 bg-gray-900/60 transition duration-300">
+                                <div class="text-xs font-bold text-indigo-400 mb-1 flex items-center justify-between">
+                                    <span>2. RESEARCHER & TOOLS</span>
+                                    <i class="fas fa-toolbox"></i>
+                                </div>
+                                <p class="text-xs text-gray-400">Calls Tavily & arXiv functions for grounded evidence.</p>
+                            </div>
+                            <div id="node-writer" class="p-4 rounded-xl border border-gray-800 bg-gray-900/60 transition duration-300">
+                                <div class="text-xs font-bold text-purple-400 mb-1 flex items-center justify-between">
+                                    <span>3. WRITER</span>
+                                    <i class="fas fa-pen-nib"></i>
+                                </div>
+                                <p class="text-xs text-gray-400">Synthesizes draft markdown with verified citations.</p>
+                            </div>
+                            <div id="node-evaluator" class="p-4 rounded-xl border border-gray-800 bg-gray-900/60 transition duration-300">
+                                <div class="text-xs font-bold text-amber-400 mb-1 flex items-center justify-between">
+                                    <span>4. EVALUATOR (CRITIQUE)</span>
+                                    <i class="fas fa-scale-balanced"></i>
+                                </div>
+                                <p class="text-xs text-gray-400">Evaluates against 4 rubrics. Loops back if score &lt; 90%.</p>
+                            </div>
+                            <div id="node-hitl" class="p-4 rounded-xl border border-gray-800 bg-gray-900/60 transition duration-300">
+                                <div class="text-xs font-bold text-rose-400 mb-1 flex items-center justify-between">
+                                    <span>5. HUMAN-IN-THE-LOOP</span>
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <p class="text-xs text-gray-400">Interrupts execution for human signoff on critical actions.</p>
+                            </div>
+                            <div id="node-completed" class="p-4 rounded-xl border border-gray-800 bg-gray-900/60 transition duration-300">
+                                <div class="text-xs font-bold text-emerald-400 mb-1 flex items-center justify-between">
+                                    <span>6. PUBLISH & END</span>
+                                    <i class="fas fa-circle-check"></i>
+                                </div>
+                                <p class="text-xs text-gray-400">Checkpoints persistent state to disk storage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Controls -->
+                    <div class="border-t border-gray-800 pt-4 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center space-x-2">
+                            <button onclick="stepGraph()" id="btnStep" class="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-xs transition flex items-center space-x-1.5 shadow-lg shadow-sky-500/20">
+                                <i class="fas fa-forward-step"></i>
+                                <span>Step Next Node</span>
+                            </button>
+                            <button onclick="runAutoLoop()" id="btnAuto" class="px-4 py-2 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold text-xs transition flex items-center space-x-1.5 border border-gray-700">
+                                <i class="fas fa-play"></i>
+                                <span>Run Complete Graph</span>
+                            </button>
+                            <button onclick="resetGraph()" class="px-3 py-2 rounded-xl bg-gray-900 hover:bg-gray-800 text-gray-400 hover:text-gray-200 text-xs transition border border-gray-800">
+                                <i class="fas fa-rotate-left"></i>
+                            </button>
+                        </div>
+                        <div id="hitlControls" class="hidden flex items-center space-x-2">
+                            <span class="text-xs text-rose-400 font-medium animate-pulse">Human Action Required:</span>
+                            <button onclick="approveHITL(true)" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold">Approve</button>
+                            <button onclick="approveHITL(false)" class="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold">Reject & Revise</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- State Inspector & Telemetry -->
+                <div class="lg:col-span-4 bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl flex flex-col">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-sm font-bold text-gray-200 flex items-center">
+                            <i class="fas fa-terminal text-sky-400 mr-2"></i> LangGraph State Inspector
+                        </h4>
+                        <span class="text-[10px] text-gray-400">Thread: agent-001</span>
+                    </div>
+                    <pre id="stateViewer" class="bg-black/60 border border-gray-800 rounded-xl p-3 text-[11px] text-sky-300 overflow-x-auto flex-1 font-mono leading-relaxed h-72">
+{
+  "step": "INIT",
+  "task": "Deep Research on Cyclic Agents",
+  "iteration": 0,
+  "critique_score": 0,
+  "human_approved": null,
+  "messages": []
+}
+                    </pre>
+                    <div class="mt-4 pt-3 border-t border-gray-800 text-xs text-gray-400">
+                        <div class="flex justify-between py-1">
+                            <span>Checkpointer:</span>
+                            <span class="text-gray-200 font-mono">MemorySaver (In-Memory)</span>
+                        </div>
+                        <div class="flex justify-between py-1">
+                            <span>Recursion Limit:</span>
+                            <span class="text-gray-200 font-mono">25 turns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: INTERACTIVE RAG CHUNKER & VECTOR RETRIEVAL -->
+        <section id="tab-rag" class="hidden space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Chunker Playground Controls -->
+                <div class="lg:col-span-6 bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl space-y-5">
+                    <h3 class="text-lg font-bold text-white flex items-center">
+                        <i class="fas fa-scissors text-emerald-400 mr-2"></i> Recursive Character Text Splitter
+                    </h3>
+                    <p class="text-xs text-gray-400">
+                        Adjust parameters dynamically to observe how documents are partitioned into semantic chunks for vector embedding.
+                    </p>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-gray-300">Chunk Size (Characters):</span>
+                            <span id="valChunkSize" class="text-emerald-400 font-mono">120</span>
+                        </div>
+                        <input type="range" id="inputChunkSize" min="50" max="300" value="120" oninput="updateRAGSimulation()" class="w-full accent-emerald-500 cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-gray-300">Chunk Overlap (Characters):</span>
+                            <span id="valChunkOverlap" class="text-amber-400 font-mono">30</span>
+                        </div>
+                        <input type="range" id="inputChunkOverlap" min="0" max="100" value="30" oninput="updateRAGSimulation()" class="w-full accent-amber-500 cursor-pointer">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Sample Document Text:</label>
+                        <textarea id="sampleDocText" oninput="updateRAGSimulation()" rows="5" class="w-full bg-gray-900 border border-gray-800 rounded-xl p-3 text-xs text-gray-300 focus:outline-none focus:border-emerald-500 font-mono">LangChain is an open-source framework designed to simplify the creation of applications using large language models. As a machine learning framework, LangChain allows developers to build data-responsive and action-aware applications. Retrieval-Augmented Generation enhances LLMs by retrieving relevant knowledge from external vector stores like ChromaDB before generating a grounded response.</textarea>
+                    </div>
+
+                    <div class="p-3 bg-gray-900/60 border border-gray-800 rounded-xl flex items-center justify-between text-xs">
+                        <span class="text-gray-400">Generated Chunks:</span>
+                        <span id="chunkCount" class="font-bold text-emerald-400 font-mono">3 Chunks</span>
+                    </div>
+                </div>
+
+                <!-- Chunks & Vector Retrieval Visualizer -->
+                <div class="lg:col-span-6 bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
+                                <i class="fas fa-layer-group text-sky-400 mr-2"></i> Vector Store Chunks & Cosine Similarity
+                            </h3>
+                            <span class="text-xs text-sky-400 font-mono">ChromaDB Simulator</span>
+                        </div>
+
+                        <!-- Query Input -->
+                        <div class="mb-4 flex space-x-2">
+                            <input type="text" id="queryInput" value="What is Retrieval-Augmented Generation?" class="flex-1 bg-gray-900 border border-gray-800 rounded-xl px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-sky-500">
+                            <button onclick="updateRAGSimulation()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs">Query</button>
+                        </div>
+
+                        <!-- Chunks Container -->
+                        <div id="chunksContainer" class="space-y-3 overflow-y-auto max-h-80 pr-1">
+                            <!-- Chunks populated via JS -->
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-gray-800 text-[11px] text-gray-400 flex justify-between">
+                        <span>Retriever Type: <strong class="text-gray-200">Maximal Marginal Relevance (MMR)</strong></span>
+                        <span>Embedding Dimension: <strong class="text-gray-200">1536 (text-embedding-3)</strong></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: MEMORY & CHAINS BENCHMARK -->
+        <section id="tab-chains" class="hidden space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Memory Token Growth Chart -->
+                <div class="lg:col-span-7 bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-lg font-bold text-white mb-2 flex items-center">
+                        <i class="fas fa-chart-line text-purple-400 mr-2"></i> Conversational Memory Scaling: Buffer vs Summary
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-6">
+                        Empirical comparison of token consumption across multi-turn dialogs. Notice how ConversationSummaryMemory maintains bounded context window costs.
+                    </p>
+                    <div class="h-64">
+                        <canvas id="memoryChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chain Types Comparison Matrix -->
+                <div class="lg:col-span-5 bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-200 mb-4 flex items-center">
+                            <i class="fas fa-cubes text-amber-400 mr-2"></i> Core Orchestration Primitives
+                        </h4>
+                        <div class="space-y-3 text-xs">
+                            <div class="p-3 rounded-xl bg-gray-900 border border-gray-800">
+                                <span class="font-bold text-sky-400">SequentialChain:</span>
+                                <p class="text-gray-400 mt-0.5">Executes steps in strict linear order where output of Step N feeds Step N+1.</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-gray-900 border border-gray-800">
+                                <span class="font-bold text-emerald-400">RouterChain:</span>
+                                <p class="text-gray-400 mt-0.5">Dynamically classifies intent and branches to specialized prompt templates (e.g. Math vs Physics vs Coding).</p>
+                            </div>
+                            <div class="p-3 rounded-xl bg-gray-900 border border-gray-800">
+                                <span class="font-bold text-purple-400">PydanticOutputParser:</span>
+                                <p class="text-gray-400 mt-0.5">Enforces strict typed schema validation on raw LLM strings with automatic retry loops.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-800 text-xs text-gray-400 flex items-center justify-between">
+                        <span>Framework: <strong class="text-gray-200">LangChain Core 0.2</strong></span>
+                        <a href="https://github.com/Eng-Ahmed-Rifai/AI-Engineering-Interactive-Portfolio/tree/main/03_LangChain_LLM_App_Development" target="_blank" class="text-sky-400 hover:underline">View Code &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: HUGGING FACE MODELS HUB -->
+        <section id="tab-huggingface" class="hidden space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Task Card 1: Text Summarization -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-lg mb-4 border border-indigo-500/20">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-1">Document Summarization</h4>
+                        <span class="text-xs text-gray-500 font-mono">facebook/bart-large-cnn</span>
+                        <p class="text-xs text-gray-400 mt-3 mb-4">
+                            Extractive and abstractive compression reducing dense technical whitepapers into actionable executive briefings.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400">Parameters: <strong>406M</strong></span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono">Seq2Seq</span>
+                    </div>
+                </div>
+
+                <!-- Task Card 2: Zero-Shot Classification -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg mb-4 border border-amber-500/20">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-1">Zero-Shot NLI Classification</h4>
+                        <span class="text-xs text-gray-500 font-mono">valhalla/distilbart-mnli-12-3</span>
+                        <p class="text-xs text-gray-400 mt-3 mb-4">
+                            Dynamic classification across arbitrary target candidate labels without task-specific fine-tuning.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400">Parameters: <strong>231M</strong></span>
+                        <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 font-mono">NLI</span>
+                    </div>
+                </div>
+
+                <!-- Task Card 3: Multimodal Vision & Audio -->
+                <div class="bg-cyber-card border border-cyber-border rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-lg mb-4 border border-purple-500/20">
+                            <i class="fas fa-microphone-lines"></i>
+                        </div>
+                        <h4 class="text-base font-bold text-white mb-1">Speech & Vision Transformers</h4>
+                        <span class="text-xs text-gray-500 font-mono">openai/whisper-small</span>
+                        <p class="text-xs text-gray-400 mt-3 mb-4">
+                            Multilingual robust speech transcription and alignment deployed via Gradio into Hugging Face Spaces.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs">
+                        <span class="text-gray-400">Parameters: <strong>244M</strong></span>
+                        <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 font-mono">Audio-to-Text</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyber-border bg-cyber-card py-6 text-center text-xs text-gray-500">
+        <p>&copy; 2026 Ahmed Mohamed Abdullatif Rifai. MIT Licensed. Open-Source AI Portfolio.</p>
+    </footer>
+
+    <!-- Interactive JavaScript Logic -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabKey) {
+            const tabs = ['langgraph', 'rag', 'chains', 'huggingface'];
+            tabs.forEach(t => {
+                const sec = document.getElementById('tab-' + t);
+                const btn = document.getElementById('btn-' + t);
+                if (t === tabKey) {
+                    sec.classList.remove('hidden');
+                    btn.classList.add('active', 'border-sky-400', 'text-sky-400');
+                    btn.classList.remove('border-transparent', 'text-gray-400');
+                } else {
+                    sec.classList.add('hidden');
+                    btn.classList.remove('active', 'border-sky-400', 'text-sky-400');
+                    btn.classList.add('border-transparent', 'text-gray-400');
+                }
+            });
+
+            if (tabKey === 'chains') {
+                renderMemoryChart();
+            }
+        }
+
+        // --- 1. LANGGRAPH SIMULATOR LOGIC ---
+        const nodesList = ['node-planner', 'node-researcher', 'node-writer', 'node-evaluator', 'node-hitl', 'node-completed'];
+        let currentStepIndex = -1;
+        let graphRunning = false;
+        let graphState = {
+            step: "INIT",
+            task: "Multi-Agent Research on Stateful Architectures",
+            iteration: 0,
+            critique_score: 0,
+            human_approved: null,
+            messages: []
+        };
+
+        function updateStateViewer() {
+            document.getElementById('stateViewer').innerText = JSON.stringify(graphState, null, 2);
+        }
+
+        function highlightNode(nodeId) {
+            nodesList.forEach(id => {
+                const el = document.getElementById(id);
+                if (id === nodeId) {
+                    el.classList.add('node-active');
+                } else {
+                    el.classList.remove('node-active');
+                }
+            });
+        }
+
+        function stepGraph() {
+            currentStepIndex++;
+            const badge = document.getElementById('graphStatusBadge');
+            const hitl = document.getElementById('hitlControls');
+
+            if (currentStepIndex === 0) {
+                badge.innerText = "1. Planning Dependencies";
+                badge.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-sky-500/20 text-sky-400 border border-sky-500/30";
+                highlightNode('node-planner');
+                graphState.step = "PLANNING";
+                graphState.messages.push("[Planner]: Generated 3-step dependency plan.");
+            } else if (currentStepIndex === 1) {
+                badge.innerText = "2. Gathering Evidence (Tools)";
+                badge.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30";
+                highlightNode('node-researcher');
+                graphState.step = "RESEARCH";
+                graphState.messages.push("[Researcher]: Called TavilySearch('StateGraph vs DAG') -> 4 papers found.");
+            } else if (currentStepIndex === 2) {
+                badge.innerText = "3. Synthesizing Draft";
+                badge.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30";
+                highlightNode('node-writer');
+                graphState.step = "WRITING";
+                graphState.messages.push("[Writer]: Compiled 1,200 word draft with citations.");
+            } else if (currentStepIndex === 3) {
+                badge.innerText = "4. Self-Critique & Rubric";
+                badge.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30";
+                highlightNode('node-evaluator');
+                graphState.step = "CRITIQUE";
+                graphState.iteration++;
+                graphState.critique_score = 96;
+                graphState.messages.push("[Evaluator]: Quality Score: 96/100. Meets publication rubric.");
+            } else if (currentStepIndex === 4) {
+                badge.innerText = "5. Waiting for Human Review";
+                badge.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-500/20 text-rose-400 border border-rose-500/30 animate-pulse";
+                highlightNode('node-hitl');
+                graphState.step = "WAITING_FOR_HUMAN";
+                hitl.classList.remove('hidden');
+                document.getElementById('btnStep').disabled = true;
+                updateStateViewer();
+                return;
+            } else if (currentStepIndex >= 5) {
+                badge.innerText = "6. Graph Execution Succeeded";
+                badge.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+                highlightNode('node-completed');
+                graphState.step = "COMPLETED";
+                graphState.messages.push("[System]: State successfully checkpointed to memory.");
+                document.getElementById('btnStep').disabled = true;
+            }
+            updateStateViewer();
+        }
+
+        function approveHITL(approved) {
+            document.getElementById('hitlControls').classList.add('hidden');
+            document.getElementById('btnStep').disabled = false;
+            graphState.human_approved = approved;
+            if (approved) {
+                graphState.messages.push("[Human]: Approved publication without revisions.");
+                currentStepIndex = 4;
+                stepGraph();
+            } else {
+                graphState.messages.push("[Human]: Rejected. Re-routing back to Writer.");
+                currentStepIndex = 1;
+                stepGraph();
+            }
+        }
+
+        function runAutoLoop() {
+            resetGraph();
+            const interval = setInterval(() => {
+                if (currentStepIndex >= 3 || graphState.step === 'WAITING_FOR_HUMAN') {
+                    clearInterval(interval);
+                    stepGraph();
+                } else {
+                    stepGraph();
+                }
+            }, 600);
+        }
+
+        function resetGraph() {
+            currentStepIndex = -1;
+            nodesList.forEach(id => document.getElementById(id).classList.remove('node-active'));
+            document.getElementById('hitlControls').classList.add('hidden');
+            document.getElementById('btnStep').disabled = false;
+            const badge = document.getElementById('graphStatusBadge');
+            badge.innerText = "Ready";
+            badge.className = "px-2.5 py-1 rounded-full text-xs font-semibold bg-gray-800 text-gray-300 border border-gray-700";
+            graphState = {
+                step: "INIT",
+                task: "Multi-Agent Research on Stateful Architectures",
+                iteration: 0,
+                critique_score: 0,
+                human_approved: null,
+                messages: []
+            };
+            updateStateViewer();
+        }
+
+        // --- 2. RAG CHUNKER & VECTOR RETRIEVAL SIMULATION ---
+        function updateRAGSimulation() {
+            const chunkSize = parseInt(document.getElementById('inputChunkSize').value);
+            const chunkOverlap = parseInt(document.getElementById('inputChunkOverlap').value);
+            const text = document.getElementById('sampleDocText').value;
+            const query = document.getElementById('queryInput').value.toLowerCase();
+
+            document.getElementById('valChunkSize').innerText = chunkSize;
+            document.getElementById('valChunkOverlap').innerText = chunkOverlap;
+
+            const chunks = [];
+            let i = 0;
+            const step = Math.max(10, chunkSize - chunkOverlap);
+            while (i < text.length) {
+                const chunk = text.substring(i, Math.min(i + chunkSize, text.length));
+                chunks.push(chunk);
+                i += step;
+                if (i >= text.length) break;
+            }
+
+            document.getElementById('chunkCount').innerText = chunks.length + " Chunks";
+
+            const container = document.getElementById('chunksContainer');
+            container.innerHTML = '';
+
+            chunks.forEach((c, idx) => {
+                // Calculate simple pseudo cosine similarity based on query term overlap
+                const words = query.split(/\s+/).filter(w => w.length > 2);
+                let matches = 0;
+                words.forEach(w => {
+                    if (c.toLowerCase().includes(w)) matches++;
+                });
+                const similarity = (0.55 + (matches / Math.max(1, words.length)) * 0.43).toFixed(3);
+                const isRelevant = similarity > 0.75;
+
+                const card = document.createElement('div');
+                card.className = `p-3.5 rounded-xl border ${isRelevant ? 'border-emerald-500/50 bg-emerald-950/20' : 'border-gray-800 bg-gray-900/60'} text-xs`;
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-1.5 font-mono text-[11px]">
+                        <span class="${isRelevant ? 'text-emerald-400 font-bold' : 'text-gray-400'}">Chunk #${idx + 1} (${c.length} chars)</span>
+                        <span class="px-2 py-0.5 rounded ${isRelevant ? 'bg-emerald-500/20 text-emerald-300 font-bold' : 'bg-gray-800 text-gray-400'}">Score: ${similarity}</span>
+                    </div>
+                    <p class="text-gray-300 font-mono text-[11px] leading-relaxed">${c}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- 3. MEMORY CHART JS INITIALIZATION ---
+        let memoryChartInstance = null;
+        function renderMemoryChart() {
+            if (memoryChartInstance) return;
+            const ctx = document.getElementById('memoryChart').getContext('2d');
+            memoryChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Turn 1', 'Turn 2', 'Turn 3', 'Turn 4', 'Turn 5', 'Turn 6', 'Turn 7', 'Turn 8', 'Turn 9', 'Turn 10'],
+                    datasets: [
+                        {
+                            label: 'ConversationBufferMemory (Linear Growth)',
+                            data: [350, 720, 1150, 1680, 2300, 3100, 4050, 5200, 6500, 8100],
+                            borderColor: '#f43f5e',
+                            backgroundColor: 'rgba(244, 63, 94, 0.1)',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            fill: true
+                        },
+                        {
+                            label: 'ConversationSummaryMemory (Constant Bounded)',
+                            data: [250, 260, 255, 270, 265, 275, 280, 270, 285, 290],
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            borderWidth: 2,
+                            tension: 0.1,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#9ca3af', font: { family: 'Fira Code' } }
+                        },
+                        x: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#9ca3af', font: { family: 'Fira Code' } }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e5e7eb', font: { size: 11 } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initial setup
+        updateRAGSimulation();
+    </script>
+</body>
+</html>

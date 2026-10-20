@@ -1,6 +1,6 @@
 """
 Interactive Streamlit Application for AI Engineering & Autonomous Agents
-Author: Ahmed Mohamed Abdullatif Rifai
+Author: Eng. Ahmed Rifai
 Credential: DeepLearning.AI & Coursera (100.00% Verified)
 """
 
@@ -9,30 +9,30 @@ import json
 import time
 
 st.set_page_config(
-    page_title="AI Engineering & Agents Portfolio | Ahmed Rifai",
+    page_title="AI Engineering & Agents Portfolio | Eng. Ahmed Rifai",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom Styling
+# Custom Google Material Styling
 st.markdown("""
 <style>
     .main-header {
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: #38bdf8;
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #8ab4f8;
         margin-bottom: 0.2rem;
     }
     .sub-header {
-        color: #94a3b8;
-        font-size: 1rem;
+        color: #9aa0a6;
+        font-size: 0.95rem;
         margin-bottom: 1.5rem;
     }
     .metric-card {
-        background-color: #111827;
-        border: 1px solid #1f2937;
-        padding: 1.2rem;
+        background-color: #1e1f20;
+        border: 1px solid #3c4043;
+        padding: 1.1rem;
         border-radius: 0.75rem;
         margin-bottom: 1rem;
     }
@@ -53,9 +53,15 @@ with st.sidebar:
         ]
     )
     st.markdown("---")
-    st.markdown("**Engineer:** Ahmed Rifai")
-    st.markdown("[GitHub Repository](https://github.com/Eng-Ahmed-Rifai/AI-Engineering-Interactive-Portfolio)")
-    st.markdown("[GitHub Pages Demo](https://eng-ahmed-rifai.github.io/AI-Engineering-Interactive-Portfolio/)")
+    st.markdown("**Engineer:** Eng. Ahmed Rifai")
+    st.markdown("[Master Showcase Repo](https://github.com/Eng-Ahmed-Rifai/AI-Engineering-Interactive-Portfolio)")
+    st.markdown("[Live Web Simulator](https://eng-ahmed-rifai.github.io/AI-Engineering-Interactive-Portfolio/)")
+    st.markdown("---")
+    st.markdown("**Dedicated Project Repos:**")
+    st.markdown("• [AI Agents in LangGraph](https://github.com/Eng-Ahmed-Rifai/AI-Agents-in-LangGraph)")
+    st.markdown("• [LangChain RAG Chat](https://github.com/Eng-Ahmed-Rifai/LangChain-Chat-with-Your-Data)")
+    st.markdown("• [LangChain Orchestration](https://github.com/Eng-Ahmed-Rifai/LangChain-LLM-Application-Development)")
+    st.markdown("• [Open Source Models](https://github.com/Eng-Ahmed-Rifai/Open-Source-Models-with-Hugging-Face)")
 
 # Page 1: LangGraph
 if module_selection == "1. LangGraph Multi-Agent Lab":
@@ -182,7 +188,7 @@ elif module_selection == "3. Memory & Chains Benchmark":
 
     st.line_chart(df)
     st.markdown("""
-    > **Key Takeaway:** `ConversationBufferMemory` costs escalate linearly with each dialogue turn, quickly exceeding model context limits and inflating token expenses. `ConversationSummaryMemory` leverages an auxiliary LLM pass to continually compress earlier turns into an evolving summary, enforcing strict constant-bound context costs.
+    > **Key Takeaway:** `ConversationBufferMemory` costs escalate linearly with each dialogue turn. `ConversationSummaryMemory` leverages an auxiliary LLM pass to continually compress earlier turns into an evolving summary, enforcing strict constant-bound context costs.
     """)
 
 # Page 4: Hugging Face Model Hub

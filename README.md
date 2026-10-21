@@ -1,16 +1,17 @@
-# 🚀 AI Engineering & Autonomous Agents Interactive Portfolio
+# 🚀 AI Engineering, Agents & Analytics Portfolio
 
 [![GitHub Pages](https://img.shields.io/badge/Live_Demo-GitHub_Pages-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://eng-ahmed-rifai.github.io/AI-Engineering-Interactive-Portfolio/)
-[![Streamlit](https://img.shields.io/badge/Interactive_App-Streamlit_Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io/)
+[![Coursera Verified](https://img.shields.io/badge/Coursera%20Verified-100%25%20Grade-1a73e8?style=for-the-badge&logo=coursera&logoColor=white)](https://www.coursera.org/)
 [![DeepLearning.AI](https://img.shields.io/badge/DeepLearning.AI-100%25_Verified-FF6F00?style=for-the-badge&logo=deeplearning)](https://www.deeplearning.ai/)
-[![LangChain](https://img.shields.io/badge/LangChain-0.2.x-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)](https://www.langchain.com/)
-[![LangGraph](https://img.shields.io/badge/LangGraph-Cyclic_Multi_Agent-0052CC?style=for-the-badge)](https://langchain-ai.github.io/langgraph/)
-[![Hugging Face](https://img.shields.io/badge/Hugging_Face-Open_Weights-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Power BI](https://img.shields.io/badge/Microsoft-Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35%2B-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Cloud%20Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://cloud.google.com/run)
 [![License: MIT](https://img.shields.io/badge/License-MIT-34A853.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 > **Architect & Engineer:** [Eng. Ahmed Rifai](https://github.com/Eng-Ahmed-Rifai)  
-> **Credential Authority:** DeepLearning.AI & Coursera (Completed at 100.00% Grade Perfection)  
-> **Repository Purpose:** Master showcase hub featuring interactive web simulators, production multi-agent architectures, and direct links to dedicated individual project repositories.
+> **Credential Authority:** Coursera, DeepLearning.AI & Google Cloud (Completed at 100.00% Grade Perfection)  
+> **Repository Purpose:** Master showcase hub featuring interactive web simulators, production multi-agent architectures, computer vision models, executive BI dashboards, and direct links to dedicated individual project repositories.
 
 ---
 
@@ -22,16 +23,20 @@ Experience the entire portfolio directly in your browser without local setup:
 
 ---
 
-## 📂 Dedicated Project Repositories
+## 📂 Dedicated Project Repositories (8 Production Systems)
 
-Each project has its own standalone repository with production code, Jupyter notebooks, unit tests, and comprehensive architectural documentation:
+Each project has its own standalone repository with production code, Jupyter notebooks, interactive apps, and comprehensive architectural documentation:
 
-| # | Project Name | Scope & Technical Architecture | Standalone Repository |
-|---|---|---|:---:|
-| 1 | **AI Agents in LangGraph** | Stateful multi-agent graphs, `MemorySaver` persistence checkpoints, Human-in-the-Loop review gates, and cyclic reflection. | [View Repository ↗](https://github.com/Eng-Ahmed-Rifai/AI-Agents-in-LangGraph) |
-| 2 | **LangChain: Chat with Your Data** | Production RAG pipeline, `RecursiveCharacterTextSplitter`, ChromaDB vector embeddings, and Maximal Marginal Relevance (MMR). | [View Repository ↗](https://github.com/Eng-Ahmed-Rifai/LangChain-Chat-with-Your-Data) |
-| 3 | **LangChain: LLM Application Development** | Orchestration primitives, Sequential & Router chains, Pydantic structured output parsing, and conversational memory scaling. | [View Repository ↗](https://github.com/Eng-Ahmed-Rifai/LangChain-LLM-Application-Development) |
-| 4 | **Open Source Models with Hugging Face** | Open-weights foundation models, multimodal inference pipelines (Summarization, NLI Zero-Shot, Whisper), and quantization. | [View Repository ↗](https://github.com/Eng-Ahmed-Rifai/Open-Source-Models-with-Hugging-Face) |
+| # | Project Name | Tech Stack & Architecture | Official Credential | Standalone Repository |
+|---|---|---|:---:|:---:|
+| 1 | **AI Agents in LangGraph** | Stateful multi-agent graphs, `MemorySaver` persistence checkpoints, Human-in-the-Loop review gates, and cyclic reflection. | DeepLearning.AI (100%) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/AI-Agents-in-LangGraph) |
+| 2 | **LangChain: Chat with Your Data** | Production RAG pipeline, `RecursiveCharacterTextSplitter`, ChromaDB vector embeddings, and Maximal Marginal Relevance (MMR). | DeepLearning.AI (100%) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/LangChain-Chat-with-Your-Data) |
+| 3 | **LangChain: LLM App Development** | Orchestration primitives, Sequential & Router chains, Pydantic structured output parsing, and conversational memory scaling. | DeepLearning.AI (100%) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/LangChain-LLM-Application-Development) |
+| 4 | **Open Source Models with Hugging Face** | Open-weights foundation models, multimodal inference pipelines (Summarization, NLI Zero-Shot, Whisper), and quantization. | DeepLearning.AI (100%) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Open-Source-Models-with-Hugging-Face) |
+| 5 | **Interactive Dashboards with Streamlit & Python** | Real-time sentiment classification, Plotly Express charts, WordCloud NLP, and `@st.cache_data` optimization. | Coursera: [`0DRBXZDH38WD`](https://www.coursera.org/account/accomplishments/verify/0DRBXZDH38WD) (100%) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Interactive-Dashboards-Streamlit-Python) |
+| 6 | **Detecting COVID-19 with Chest X-Ray using PyTorch** | Deep Learning transfer learning with ResNet-18, custom Dataset pipeline, data augmentation, and interactive diagnostic web app. | Coursera: [`XKRSYPKAMPTU`](https://www.coursera.org/account/accomplishments/verify/XKRSYPKAMPTU) (100%) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/COVID19-Detection-Chest-XRay-PyTorch) |
+| 7 | **Power BI Executive Workforce Analytics Dashboard** | Star schema data model, DAX measures library, clutter-free horizontal bar ranking, and Tile slicers. | Coursera: [`UJHZPZUHYU63`](https://www.coursera.org/account/accomplishments/verify/UJHZPZUHYU63) (100%) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Power-BI-Interactive-Dashboards) • [Live Demo ↗](https://eng-ahmed-rifai.github.io/Power-BI-Interactive-Dashboards/) |
+| 8 | **Deploy Streamlit App Integrated with Gemini Pro on Cloud Run** | Serverless containerized deployment with Google Cloud Run, Cloud Build CI/CD, and Gemini Pro / Flash multimodal reasoning. | Google Cloud Architecture | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Gemini-Pro-Streamlit-Cloud-Run) |
 
 ---
 
@@ -81,16 +86,21 @@ streamlit run streamlit_app.py
 
 ---
 
-## 📜 Verified Coursera & DeepLearning.AI Credentials
+## 📜 Verified Credentials & Certificates
 
-All 4 specialized laboratory curriculums were officially completed by **Eng. Ahmed Rifai** with **100.00% Grade Perfection**:
-- **AI Agents in LangGraph** — DeepLearning.AI (Completed October 21, 2026 | Grade: 100%)
-- **LangChain Chat with Your Data** — DeepLearning.AI (Completed October 21, 2026 | Grade: 100%)
-- **LangChain for LLM Application Development** — DeepLearning.AI (Completed October 21, 2026 | Grade: 100%)
-- **Open Source Models with Hugging Face** — DeepLearning.AI (Completed October 21, 2026 | Grade: 100%)
+All curriculums were officially verified and completed by **Eng. Ahmed Rifai** with **100.00% Grade Perfection**:
+- **Power BI Interactive Dashboard Fundamentals:** [UJHZPZUHYU63](https://www.coursera.org/account/accomplishments/verify/UJHZPZUHYU63) — 100.00%
+- **Detecting COVID-19 with Chest X-Ray using PyTorch:** [XKRSYPKAMPTU](https://www.coursera.org/account/accomplishments/verify/XKRSYPKAMPTU) — 100.00%
+- **Interactive Dashboards with Streamlit & Python:** [0DRBXZDH38WD](https://www.coursera.org/account/accomplishments/verify/0DRBXZDH38WD) — 100.00%
+- **AI Agents in LangGraph:** DeepLearning.AI — 100.00%
+- **LangChain Chat with Your Data:** DeepLearning.AI — 100.00%
+- **LangChain for LLM Application Development:** DeepLearning.AI — 100.00%
+- **Open Source Models with Hugging Face:** DeepLearning.AI — 100.00%
 
 ---
 
 ## 📄 License & Attribution
-This repository is licensed under the [MIT License](LICENSE).  
-*Built with AI Agent assistance.*
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+*© 2026 **Eng. Ahmed Rifai** • Built with AI Agent assistance • MIT License*

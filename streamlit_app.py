@@ -57,11 +57,15 @@ with st.sidebar:
     st.markdown("[Master Showcase Repo](https://github.com/Eng-Ahmed-Rifai/AI-Engineering-Interactive-Portfolio)")
     st.markdown("[Live Web Simulator](https://eng-ahmed-rifai.github.io/AI-Engineering-Interactive-Portfolio/)")
     st.markdown("---")
-    st.markdown("**Dedicated Project Repos:**")
-    st.markdown("• [AI Agents in LangGraph](https://github.com/Eng-Ahmed-Rifai/AI-Agents-in-LangGraph)")
-    st.markdown("• [LangChain RAG Chat](https://github.com/Eng-Ahmed-Rifai/LangChain-Chat-with-Your-Data)")
-    st.markdown("• [LangChain Orchestration](https://github.com/Eng-Ahmed-Rifai/LangChain-LLM-Application-Development)")
-    st.markdown("• [Open Source Models](https://github.com/Eng-Ahmed-Rifai/Open-Source-Models-with-Hugging-Face)")
+    st.markdown("**Dedicated Project Repos (8 Systems):**")
+    st.markdown("1. [AI Agents in LangGraph](https://github.com/Eng-Ahmed-Rifai/AI-Agents-in-LangGraph)")
+    st.markdown("2. [LangChain RAG Chat](https://github.com/Eng-Ahmed-Rifai/LangChain-Chat-with-Your-Data)")
+    st.markdown("3. [LangChain Orchestration](https://github.com/Eng-Ahmed-Rifai/LangChain-LLM-Application-Development)")
+    st.markdown("4. [Open Source Models](https://github.com/Eng-Ahmed-Rifai/Open-Source-Models-with-Hugging-Face)")
+    st.markdown("5. [Streamlit Airline Analytics](https://github.com/Eng-Ahmed-Rifai/Interactive-Dashboards-Streamlit-Python)")
+    st.markdown("6. [PyTorch COVID-19 Radiography](https://github.com/Eng-Ahmed-Rifai/COVID19-Detection-Chest-XRay-PyTorch)")
+    st.markdown("7. [Power BI Executive Analytics](https://github.com/Eng-Ahmed-Rifai/Power-BI-Interactive-Dashboards)")
+    st.markdown("8. [Gemini Pro Cloud Run](https://github.com/Eng-Ahmed-Rifai/Gemini-Pro-Streamlit-Cloud-Run)")
 
 # Page 1: LangGraph
 if module_selection == "1. LangGraph Multi-Agent Lab":

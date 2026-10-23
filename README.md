@@ -54,6 +54,21 @@ Tailored hands-on implementations engineered for foundation AI & data science en
 
 ---
 
+---
+
+## 🎓 Flagship Capstone Graduation Projects (Master Specializations)
+
+Comprehensive end-to-end graduation systems architected and completed at **100.00% Grade Perfection** to earn official professional credentials across Google, IBM, Microsoft, Meta, and Duke University:
+
+| # | Capstone Project Name | Specialization Authority | Tech Stack & Core Architecture | Verified Credential | Standalone Repo / Deliverable |
+|---|---|---|---|:---:|:---:|
+| 1 | **Concrete Surface Crack Detection (ViT vs. CNN)** | IBM AI Engineering Professional Certificate (Course 6/13) | PyTorch, TensorFlow/Keras, Vision Transformers (`ViT-B/16`), ResNet-50, Attention Rollout | [Cert `214774P7N1O1`](https://www.coursera.org/account/accomplishments/verify/214774P7N1O1) (100%) | [IBM AI Repo ↗](https://github.com/Eng-Ahmed-Rifai/IBM-AI-Engineering-Professional-Certificate) |
+| 2 | **Cyclistic Bike-Share Executive BI & Conversion Engine** | Google Data Analytics Professional Certificate (Course 8/9) | BigQuery SQL, R (`tidyverse`, `ggplot2`), Tableau Desktop, Executive Storytelling | [Cert `HGKWH2RYX02S`](https://www.coursera.org/account/accomplishments/verify/HGKWH2RYX02S) (100%) | [Google Analytics Repo ↗](https://github.com/Eng-Ahmed-Rifai/Google-Data-Analytics-Professional-Certificate) |
+| 3 | **Automated Operations & Multi-Tier Cloud Catalog System** | Google IT Automation with Python Professional Certificate (Course 6/6) | Python 3, Pillow (`PIL`), REST API (`requests`), ReportLab PDF Engine, `psutil` Health Watchdog | [Cert `G9Z5L2Q8H7K3`](https://www.coursera.org/account/accomplishments/verify/G9Z5L2Q8H7K3) (100%) | [Google IT Automation Repo ↗](https://github.com/Eng-Ahmed-Rifai/Google-IT-Automation-with-Python) |
+| 4 | **Enterprise Multi-Modal Intelligent Troubleshooting & Governance** | Microsoft AI & ML Engineering Professional Certificate (Course 5/5) | Azure ML Studio, Multi-Modal Neural Models, Automated Pipelines, Responsible AI & Fairlearn | [Cert `WCREW5K406X9`](https://www.coursera.org/account/accomplishments/verify/WCREW5K406X9) (100%) | [Master Cert `FP07LDY7GTZ4`](https://www.coursera.org/account/accomplishments/professional-cert/FP07LDY7GTZ4) |
+| 5 | **Calla & Ivy Omni-Channel Growth Campaign & A/B ROAS Funnel** | Meta Social Media Marketing Professional Certificate (Course 6/6) | Meta Ads Manager, Meta Pixel Tracking, A/B Creative Split Testing, Executive Pitch Deck Engine | **24/24 (100.00%) Passed** | [Meta Marketing Repo ↗](https://github.com/Eng-Ahmed-Rifai/Meta-Social-Media-Marketing-Specialization) |
+| 6 | **Production Cloud MLOps CI/CD & Rust Low-Latency Serving** | Duke University MLOps Specialization (Course 4/4) | MLflow, AWS SageMaker, Azure ML, Rust Tokio Microservice CLI, GitHub Actions, Docker | [Master Cert `I1THK805BQLF`](https://www.coursera.org/account/accomplishments/specialization/I1THK805BQLF) (100%) | [Duke MLOps Repo ↗](https://github.com/Eng-Ahmed-Rifai/MLOps-Specialization-Duke) |
+
 ## 🏗️ Master Architecture: LangGraph Cyclic State Machine
 
 ```mermaid

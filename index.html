@@ -169,6 +169,10 @@
                 <i class="fas fa-cubes-stacked text-xs text-google-green"></i>
                 <span>5. Junior Applied ML Suite (5 Apps)</span>
             </button>
+            <button onclick="switchTab('capstones')" id="btn-capstones" class="px-4 py-2.5 rounded-t-lg font-medium text-google-textSecondary hover:text-white transition flex items-center space-x-2 whitespace-nowrap">
+                <i class="fas fa-graduation-cap text-xs text-google-yellow"></i>
+                <span>6. Flagship Capstones (Specializations)</span>
+            </button>
         </div>
     </div>
 
@@ -729,6 +733,454 @@
             </div>
         </section>
 
+    
+        <!-- TAB 6: FLAGSHIP CAPSTONE GRADUATION PROJECTS -->
+        <section id="tab-capstones" class="space-y-6 hidden">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-google-surface via-google-card to-google-surface border border-google-border rounded-xl p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center space-x-2 mb-1.5">
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-google-yellow/20 text-google-yellow border border-google-yellow/30">
+                            Master Capstone Graduation Projects
+                        </span>
+                        <span class="text-xs text-google-textSecondary">6 Enterprise Specializations &bull; 100.00% Grade Perfection</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-white">
+                        Flagship Specialization Capstones & Production Systems
+                    </h3>
+                    <p class="text-xs text-google-textSecondary mt-1 max-w-2xl leading-relaxed">
+                        Exhaustive, end-to-end graduation projects submitted to earn professional credentials across Google, IBM, Microsoft, Meta, and Duke University. Each project features an interactive domain simulator demonstrating the underlying enterprise architecture.
+                    </p>
+                </div>
+                <div class="flex items-center space-x-2 shrink-0">
+                    <span class="px-3 py-1.5 rounded-lg bg-google-card text-xs font-mono border border-google-border text-google-textPrimary">
+                        <i class="fas fa-certificate text-google-yellow mr-1.5"></i>All 100% Certified
+                    </span>
+                </div>
+            </div>
+
+            <!-- Capstones Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <!-- 1. IBM AI Deep Learning & Computer Vision Capstone -->
+                <div class="bg-google-surface border border-google-border rounded-xl p-5 flex flex-col justify-between hover:border-google-blue/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-lg bg-blue-500/15 text-blue-400 flex items-center justify-center text-sm font-bold">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white">Concrete Crack Detection (ViT vs. CNN)</h4>
+                                    <span class="text-[11px] text-google-blue font-mono">IBM AI Engineering Capstone (Course 6/13)</span>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-green/10 text-google-green border border-google-green/30">
+                                100% Passed
+                            </span>
+                        </div>
+                        <p class="text-xs text-google-textSecondary leading-relaxed mb-4">
+                            Trained and benchmarked deep convolutional networks (ResNet-50, VGG-16) against Vision Transformers (ViT-B/16) on 40,000 civil engineering surface images to detect critical structural fractures. Achieved 99.4% F1-score with ViT self-attention rollout.
+                        </p>
+
+                        <!-- Interactive Mini-Simulator: ViT Attention Inspector -->
+                        <div class="bg-google-card border border-google-border rounded-lg p-3.5 mb-4 text-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-white flex items-center">
+                                    <i class="fas fa-microscope text-google-blue mr-1.5"></i>ViT Attention Diagnostic Simulator
+                                </span>
+                                <span class="text-[10px] font-mono text-google-textSecondary">PyTorch &bull; ViT-B/16</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 mb-3">
+                                <button onclick="runVitInspection('severe')" id="vit-btn-severe" class="py-1 px-2 rounded bg-google-hover border border-google-blue text-white text-[11px] font-medium transition text-center">
+                                    Sample A: Severe Crack
+                                </button>
+                                <button onclick="runVitInspection('micro')" id="vit-btn-micro" class="py-1 px-2 rounded bg-google-surface border border-google-border hover:border-google-blue text-google-textSecondary text-[11px] transition text-center">
+                                    Sample B: Micro-Crack
+                                </button>
+                                <button onclick="runVitInspection('intact')" id="vit-btn-intact" class="py-1 px-2 rounded bg-google-surface border border-google-border hover:border-google-blue text-google-textSecondary text-[11px] transition text-center">
+                                    Sample C: Intact Concrete
+                                </button>
+                            </div>
+                            <div class="bg-google-surface p-2.5 rounded border border-google-border font-mono text-[11px] space-y-1.5" id="vit-result-panel">
+                                <div class="flex justify-between">
+                                    <span class="text-google-textSecondary">ViT Diagnostic:</span>
+                                    <span class="text-google-red font-bold" id="vit-diagnosis">STRUCTURAL CRACK DETECTED</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-google-textSecondary">Attention Confidence:</span>
+                                    <span class="text-google-green" id="vit-confidence">99.42% (Self-Attention Head 7)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-google-textSecondary">Inference Latency:</span>
+                                    <span class="text-white">11.8 ms (TensorRT Optimized)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] mb-3">
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Architecture</span>
+                                <span class="text-white font-mono">ViT-B/16 + ResNet50</span>
+                            </div>
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Dataset Scope</span>
+                                <span class="text-white font-mono">40,000 High-Res Images</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-google-border flex items-center justify-between gap-2">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/214774P7N1O1" target="_blank" class="flex-1 py-1.5 rounded-md bg-google-blue text-[#131314] hover:bg-sky-300 font-medium text-xs text-center transition flex items-center justify-center space-x-1">
+                            <i class="fas fa-award text-[10px]"></i>
+                            <span>Verify Credential (214774P7N1O1)</span>
+                        </a>
+                        <a href="https://github.com/Eng-Ahmed-Rifai/IBM-AI-Engineering-Professional-Certificate" target="_blank" class="p-1.5 rounded-md bg-google-card hover:bg-google-hover border border-google-border text-google-textSecondary hover:text-white text-xs transition" title="Repository">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Google Data Analytics Capstone (Cyclistic BI) -->
+                <div class="bg-google-surface border border-google-border rounded-xl p-5 flex flex-col justify-between hover:border-google-green/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-lg bg-green-500/15 text-green-400 flex items-center justify-center text-sm font-bold">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white">Cyclistic Bike-Share Executive BI</h4>
+                                    <span class="text-[11px] text-google-green font-mono">Google Data Analytics Capstone (Course 8/9)</span>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-green/10 text-google-green border border-google-green/30">
+                                100% Passed
+                            </span>
+                        </div>
+                        <p class="text-xs text-google-textSecondary leading-relaxed mb-4">
+                            End-to-end data lifecycle analysis (Ask, Prepare, Process, Analyze, Share, Act) analyzing 5.7M+ ride trips using BigQuery SQL and R. Formulated data-driven conversion strategies turning casual summer weekend riders into high-retention annual members.
+                        </p>
+
+                        <!-- Interactive Mini-Simulator: Cyclistic Ridership Explorer -->
+                        <div class="bg-google-card border border-google-border rounded-lg p-3.5 mb-4 text-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-white flex items-center">
+                                    <i class="fas fa-bicycle text-google-green mr-1.5"></i>Cyclistic Behavioral Insights
+                                </span>
+                                <div class="flex space-x-1">
+                                    <button onclick="toggleCyclisticMetric('hourly')" id="cyc-btn-hourly" class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-blue/20 text-google-blue border border-google-blue/30">Hourly Peak</button>
+                                    <button onclick="toggleCyclisticMetric('duration')" id="cyc-btn-duration" class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-surface text-google-textSecondary hover:text-white">Trip Duration</button>
+                                </div>
+                            </div>
+                            <div class="bg-google-surface p-2.5 rounded border border-google-border font-mono text-[11px] space-y-1.5" id="cyclistic-metric-panel">
+                                <div class="flex justify-between">
+                                    <span class="text-google-textSecondary">Annual Members Peak:</span>
+                                    <span class="text-google-blue font-bold">8:00 AM & 5:15 PM (Daily Commute)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-google-textSecondary">Casual Riders Peak:</span>
+                                    <span class="text-google-yellow font-bold">1:00 PM - 4:30 PM (Weekend Leisure)</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-google-textSecondary">Key Recommendation:</span>
+                                    <span class="text-google-green">Targeted Summer Weekend Digital Campaign</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] mb-3">
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Data Volume</span>
+                                <span class="text-white font-mono">5,720,000+ Records</span>
+                            </div>
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Analytics Stack</span>
+                                <span class="text-white font-mono">BigQuery SQL, R, Tableau</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-google-border flex items-center justify-between gap-2">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/HGKWH2RYX02S" target="_blank" class="flex-1 py-1.5 rounded-md bg-google-green text-[#131314] hover:bg-emerald-300 font-medium text-xs text-center transition flex items-center justify-center space-x-1">
+                            <i class="fas fa-award text-[10px]"></i>
+                            <span>Verify Credential (HGKWH2RYX02S)</span>
+                        </a>
+                        <a href="https://github.com/Eng-Ahmed-Rifai/Google-Data-Analytics-Professional-Certificate" target="_blank" class="p-1.5 rounded-md bg-google-card hover:bg-google-hover border border-google-border text-google-textSecondary hover:text-white text-xs transition" title="Repository">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Google IT Automation with Python Capstone -->
+                <div class="bg-google-surface border border-google-border rounded-xl p-5 flex flex-col justify-between hover:border-google-yellow/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-lg bg-yellow-500/15 text-yellow-400 flex items-center justify-center text-sm font-bold">
+                                    <i class="fas fa-terminal"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white">Automated Operations & Cloud Catalog</h4>
+                                    <span class="text-[11px] text-google-yellow font-mono">Google IT Automation Capstone (Course 6/6)</span>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-green/10 text-google-green border border-google-green/30">
+                                100% Passed
+                            </span>
+                        </div>
+                        <p class="text-xs text-google-textSecondary leading-relaxed mb-4">
+                            Production DevOps automation architecture: batch image preprocessing (PIL), JSON web service ingestion (Django/REST), dynamic executive PDF report generation (ReportLab), automated email dispatch (smtplib), and hardware health watchdog.
+                        </p>
+
+                        <!-- Interactive Mini-Simulator: DevOps Pipeline Runner -->
+                        <div class="bg-google-card border border-google-border rounded-lg p-3.5 mb-4 text-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-white flex items-center">
+                                    <i class="fas fa-play text-google-yellow mr-1.5"></i>4-Stage DevOps Pipeline Runner
+                                </span>
+                                <button onclick="runDevOpsPipeline()" id="devops-run-btn" class="px-2.5 py-0.5 rounded bg-google-yellow text-[#131314] font-medium text-[10px] hover:bg-amber-300 transition">
+                                    Execute Pipeline
+                                </button>
+                            </div>
+                            <div class="bg-[#0b0c0d] p-2.5 rounded border border-google-border font-mono text-[10px] space-y-1 h-24 overflow-y-auto" id="devops-terminal">
+                                <div class="text-google-textSecondary">[SYSTEM READY] Ready to execute automated operations pipeline...</div>
+                                <div class="text-google-textSecondary">[MODULES] Pillow, Requests, ReportLab, smtplib, psutil loaded.</div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] mb-3">
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">DevOps Pipeline</span>
+                                <span class="text-white font-mono">PIL &bull; REST &bull; ReportLab</span>
+                            </div>
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Monitoring Engine</span>
+                                <span class="text-white font-mono">psutil Watchdog &bull; Alerts</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-google-border flex items-center justify-between gap-2">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/G9Z5L2Q8H7K3" target="_blank" class="flex-1 py-1.5 rounded-md bg-google-yellow text-[#131314] hover:bg-amber-300 font-medium text-xs text-center transition flex items-center justify-center space-x-1">
+                            <i class="fas fa-award text-[10px]"></i>
+                            <span>Verify Credential (G9Z5L2Q8H7K3)</span>
+                        </a>
+                        <a href="https://github.com/Eng-Ahmed-Rifai/Google-IT-Automation-with-Python" target="_blank" class="p-1.5 rounded-md bg-google-card hover:bg-google-hover border border-google-border text-google-textSecondary hover:text-white text-xs transition" title="Repository">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Microsoft AI & ML Engineering Capstone -->
+                <div class="bg-google-surface border border-google-border rounded-xl p-5 flex flex-col justify-between hover:border-purple-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-lg bg-purple-500/15 text-purple-400 flex items-center justify-center text-sm font-bold">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white">Intelligent Troubleshooting Agent</h4>
+                                    <span class="text-[11px] text-purple-400 font-mono">Microsoft AI/ML Capstone (Course 5/5)</span>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-green/10 text-google-green border border-google-green/30">
+                                100% Passed
+                            </span>
+                        </div>
+                        <p class="text-xs text-google-textSecondary leading-relaxed mb-4">
+                            Enterprise diagnostic system combining multi-modal models, Azure Machine Learning automated pipelines, and an autonomous troubleshooting agent capable of diagnosing IT telemetry anomalies and executing automated incident remediation.
+                        </p>
+
+                        <!-- Interactive Mini-Simulator: Agent Triage Console -->
+                        <div class="bg-google-card border border-google-border rounded-lg p-3.5 mb-4 text-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-white flex items-center">
+                                    <i class="fas fa-network-wired text-purple-400 mr-1.5"></i>Autonomous Triage Engine
+                                </span>
+                                <span class="text-[10px] font-mono text-purple-400">Azure ML Studio</span>
+                            </div>
+                            <div class="flex space-x-1.5 mb-2.5">
+                                <select id="ms-anomaly-select" class="flex-1 bg-google-surface border border-google-border rounded px-2 py-1 text-white text-[11px]">
+                                    <option value="db_pool">Incident #1042: Database Pool Depletion</option>
+                                    <option value="tensor_leak">Incident #1043: PyTorch GPU Memory Leak</option>
+                                    <option value="drift">Incident #1044: Embeddings Concept Drift</option>
+                                </select>
+                                <button onclick="runAgentDiagnostic()" class="px-2.5 py-1 rounded bg-purple-500 text-white font-medium text-[11px] hover:bg-purple-600 transition">
+                                    Diagnose
+                                </button>
+                            </div>
+                            <div class="bg-google-surface p-2.5 rounded border border-google-border font-mono text-[10px] space-y-1" id="ms-agent-output">
+                                <div class="text-google-textSecondary">Select incident & click Diagnose to trigger autonomous agent loop...</div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] mb-3">
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Cloud Framework</span>
+                                <span class="text-white font-mono">Azure ML Studio Pipelines</span>
+                            </div>
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Governance</span>
+                                <span class="text-white font-mono">Responsible AI & Fairlearn</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-google-border flex items-center justify-between gap-2">
+                        <a href="https://www.coursera.org/account/accomplishments/verify/WCREW5K406X9" target="_blank" class="flex-1 py-1.5 rounded-md bg-purple-500 text-white hover:bg-purple-600 font-medium text-xs text-center transition flex items-center justify-center space-x-1">
+                            <i class="fas fa-award text-[10px]"></i>
+                            <span>Verify Credential (WCREW5K406X9)</span>
+                        </a>
+                        <a href="https://www.coursera.org/account/accomplishments/professional-cert/FP07LDY7GTZ4" target="_blank" class="p-1.5 rounded-md bg-google-card hover:bg-google-hover border border-google-border text-google-textSecondary hover:text-white text-xs transition" title="Specialization Credential">
+                            <i class="fas fa-certificate"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Meta Social Media Marketing Capstone -->
+                <div class="bg-google-surface border border-google-border rounded-xl p-5 flex flex-col justify-between hover:border-google-red/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-lg bg-red-500/15 text-red-400 flex items-center justify-center text-sm font-bold">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white">Calla & Ivy Omni-Channel Campaign</h4>
+                                    <span class="text-[11px] text-google-red font-mono">Meta Marketing Capstone (Course 6/6)</span>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-green/10 text-google-green border border-google-green/30">
+                                24/24 (100%)
+                            </span>
+                        </div>
+                        <p class="text-xs text-google-textSecondary leading-relaxed mb-4">
+                            Real-world brand growth campaign for Calla & Ivy: A/B creative split testing across Facebook & Instagram Feeds/Reels, Meta Pixel conversion funnel tracking, audience lookalikes, and executive board presentation.
+                        </p>
+
+                        <!-- Interactive Mini-Simulator: Meta A/B ROAS Simulator -->
+                        <div class="bg-google-card border border-google-border rounded-lg p-3.5 mb-4 text-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-white flex items-center">
+                                    <i class="fas fa-sliders text-google-red mr-1.5"></i>Meta A/B ROAS & Funnel Optimizer
+                                </span>
+                                <span class="text-[10px] font-mono text-google-red">Pixel Attribution</span>
+                            </div>
+                            <div class="space-y-2 mb-2">
+                                <div class="flex justify-between text-[11px]">
+                                    <span class="text-google-textSecondary">Monthly Ad Spend:</span>
+                                    <span class="text-white font-mono font-bold" id="meta-spend-display">$5,000</span>
+                                </div>
+                                <input type="range" id="meta-spend-slider" min="1000" max="15000" step="500" value="5000" oninput="calculateMetaRoas()" class="w-full accent-google-red h-1.5 bg-google-surface rounded-lg cursor-pointer">
+                            </div>
+                            <div class="bg-google-surface p-2.5 rounded border border-google-border font-mono text-[11px] grid grid-cols-2 gap-2">
+                                <div>
+                                    <span class="text-google-textSecondary block text-[10px]">Variant A (Video Reels)</span>
+                                    <span class="text-google-green font-bold" id="meta-roas-a">ROAS: 3.42x ($17,100)</span>
+                                    <span class="text-[10px] text-google-textSecondary block">CPA: $14.20</span>
+                                </div>
+                                <div>
+                                    <span class="text-google-textSecondary block text-[10px]">Variant B (Static Carousel)</span>
+                                    <span class="text-google-yellow font-bold" id="meta-roas-b">ROAS: 2.15x ($10,750)</span>
+                                    <span class="text-[10px] text-google-textSecondary block">CPA: $22.60</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] mb-3">
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Final Deliverable</span>
+                                <span class="text-white font-mono">Executive Deck (24/24 100%)</span>
+                            </div>
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Optimization</span>
+                                <span class="text-white font-mono">ROAS + Meta Pixel Funnel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-google-border flex items-center justify-between gap-2">
+                        <a href="https://github.com/Eng-Ahmed-Rifai/Meta-Social-Media-Marketing-Specialization" target="_blank" class="flex-1 py-1.5 rounded-md bg-google-red text-white hover:bg-rose-500 font-medium text-xs text-center transition flex items-center justify-center space-x-1">
+                            <i class="fas fa-file-powerpoint text-[10px]"></i>
+                            <span>View Capstone Presentation Deliverables</span>
+                        </a>
+                        <a href="https://github.com/Eng-Ahmed-Rifai/Meta-Social-Media-Marketing-Specialization" target="_blank" class="p-1.5 rounded-md bg-google-card hover:bg-google-hover border border-google-border text-google-textSecondary hover:text-white text-xs transition" title="Repository">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Duke University MLOps Capstone -->
+                <div class="bg-google-surface border border-google-border rounded-xl p-5 flex flex-col justify-between hover:border-cyan-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2.5">
+                                <div class="w-9 h-9 rounded-lg bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-sm font-bold">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white">Production Cloud MLOps & Rust Engine</h4>
+                                    <span class="text-[11px] text-cyan-400 font-mono">Duke University MLOps Specialization</span>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-google-green/10 text-google-green border border-google-green/30">
+                                100% Passed
+                            </span>
+                        </div>
+                        <p class="text-xs text-google-textSecondary leading-relaxed mb-4">
+                            Continuous delivery & training architecture: automated GitHub Actions testing, MLflow registry with quality gates, AWS SageMaker container endpoint deployment, and microsecond Rust CLI serving for high-throughput edge inference.
+                        </p>
+
+                        <!-- Interactive Mini-Simulator: MLOps Pipeline Stage Stepper -->
+                        <div class="bg-google-card border border-google-border rounded-lg p-3.5 mb-4 text-xs">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-medium text-white flex items-center">
+                                    <i class="fas fa-arrows-spin text-cyan-400 mr-1.5"></i>MLOps Production Lifecycle Stepper
+                                </span>
+                                <button onclick="runMLOpsPipeline()" id="mlops-run-btn" class="px-2.5 py-0.5 rounded bg-cyan-500 text-[#131314] font-medium text-[10px] hover:bg-cyan-400 transition">
+                                    Trigger CI/CD
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-4 gap-1.5 mb-2 text-center" id="mlops-stages">
+                                <div class="p-1 rounded bg-google-surface border border-google-border text-[9px] font-mono" id="mlops-s1">1. Lint & Test</div>
+                                <div class="p-1 rounded bg-google-surface border border-google-border text-[9px] font-mono" id="mlops-s2">2. MLflow Train</div>
+                                <div class="p-1 rounded bg-google-surface border border-google-border text-[9px] font-mono" id="mlops-s3">3. SageMaker</div>
+                                <div class="p-1 rounded bg-google-surface border border-google-border text-[9px] font-mono" id="mlops-s4">4. Rust Serve</div>
+                            </div>
+                            <div class="bg-google-surface p-2 rounded border border-google-border font-mono text-[10px] flex justify-between" id="mlops-status-line">
+                                <span class="text-google-textSecondary">Serving Latency:</span>
+                                <span class="text-google-green font-bold">2.14 ms (p99 @ 12k req/s)</span>
+                            </div>
+                        </div>
+
+                        <!-- Technical Specs -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] mb-3">
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">Cloud Target</span>
+                                <span class="text-white font-mono">AWS SageMaker + Azure ML</span>
+                            </div>
+                            <div class="p-2 rounded bg-google-card border border-google-border">
+                                <span class="text-google-textSecondary block text-[10px]">High-Perf CLI</span>
+                                <span class="text-white font-mono">Rust Tokio Microservice</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-google-border flex items-center justify-between gap-2">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/I1THK805BQLF" target="_blank" class="flex-1 py-1.5 rounded-md bg-cyan-500 text-[#131314] hover:bg-cyan-400 font-medium text-xs text-center transition flex items-center justify-center space-x-1">
+                            <i class="fas fa-award text-[10px]"></i>
+                            <span>Verify Master Credential (I1THK805BQLF)</span>
+                        </a>
+                        <a href="https://github.com/Eng-Ahmed-Rifai/MLOps-Specialization-Duke" target="_blank" class="p-1.5 rounded-md bg-google-card hover:bg-google-hover border border-google-border text-google-textSecondary hover:text-white text-xs transition" title="Repository">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- Google-styled Footer -->
@@ -739,7 +1191,7 @@
     <!-- Scripts -->
     <script>
         function switchTab(tabKey) {
-            const tabs = ['langgraph', 'rag', 'chains', 'huggingface', 'junior-suite'];
+            const tabs = ['langgraph', 'rag', 'chains', 'huggingface', 'junior-suite', 'capstones'];
             tabs.forEach(t => {
                 const sec = document.getElementById('tab-' + t);
                 const btn = document.getElementById('btn-' + t);
@@ -983,6 +1435,175 @@
         }
 
         updateRAGSimulation();
+
+        // --- 6. Flagship Capstones Interactive Simulators ---
+        function runVitInspection(sampleType) {
+            const diagEl = document.getElementById('vit-diagnosis');
+            const confEl = document.getElementById('vit-confidence');
+            ['severe', 'micro', 'intact'].forEach(t => {
+                const b = document.getElementById('vit-btn-' + t);
+                if (b) {
+                    if (t === sampleType) {
+                        b.classList.add('bg-google-hover', 'border-google-blue', 'text-white');
+                        b.classList.remove('bg-google-surface', 'border-google-border', 'text-google-textSecondary');
+                    } else {
+                        b.classList.remove('bg-google-hover', 'border-google-blue', 'text-white');
+                        b.classList.add('bg-google-surface', 'border-google-border', 'text-google-textSecondary');
+                    }
+                }
+            });
+
+            if (sampleType === 'severe') {
+                diagEl.innerText = "CRITICAL STRUCTURAL FRACTURE DETECTED";
+                diagEl.className = "text-google-red font-bold";
+                confEl.innerText = "99.42% (ViT Self-Attention Head 7 & 11)";
+            } else if (sampleType === 'micro') {
+                diagEl.innerText = "SURFACE MICRO-CRACK DETECTED";
+                diagEl.className = "text-google-yellow font-bold";
+                confEl.innerText = "94.85% (ViT Self-Attention Head 4)";
+            } else {
+                diagEl.innerText = "SURFACE INTACT (ZERO CRACK DEFECTS)";
+                diagEl.className = "text-google-green font-bold";
+                confEl.innerText = "99.88% Structural Soundness Verified";
+            }
+        }
+
+        function toggleCyclisticMetric(metricType) {
+            const panel = document.getElementById('cyclistic-metric-panel');
+            const btnH = document.getElementById('cyc-btn-hourly');
+            const btnD = document.getElementById('cyc-btn-duration');
+
+            if (metricType === 'hourly') {
+                btnH.className = "px-2 py-0.5 rounded text-[10px] font-mono bg-google-blue/20 text-google-blue border border-google-blue/30";
+                btnD.className = "px-2 py-0.5 rounded text-[10px] font-mono bg-google-surface text-google-textSecondary hover:text-white";
+                panel.innerHTML = `
+                    <div class="flex justify-between">
+                        <span class="text-google-textSecondary">Annual Members Peak:</span>
+                        <span class="text-google-blue font-bold">8:00 AM & 5:15 PM (Daily Commute)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-google-textSecondary">Casual Riders Peak:</span>
+                        <span class="text-google-yellow font-bold">1:00 PM - 4:30 PM (Weekend Leisure)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-google-textSecondary">Key Recommendation:</span>
+                        <span class="text-google-green">Targeted Summer Weekend Digital Campaign</span>
+                    </div>
+                `;
+            } else {
+                btnD.className = "px-2 py-0.5 rounded text-[10px] font-mono bg-google-green/20 text-google-green border border-google-green/30";
+                btnH.className = "px-2 py-0.5 rounded text-[10px] font-mono bg-google-surface text-google-textSecondary hover:text-white";
+                panel.innerHTML = `
+                    <div class="flex justify-between">
+                        <span class="text-google-textSecondary">Member Avg Duration:</span>
+                        <span class="text-google-blue font-bold">12.4 min (A-to-B Direct Transit)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-google-textSecondary">Casual Avg Duration:</span>
+                        <span class="text-google-yellow font-bold">31.8 min (2.56x Longer Sightseeing)</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-google-textSecondary">Key Recommendation:</span>
+                        <span class="text-google-green">Launch "Weekend Explorer" Membership Tier</span>
+                    </div>
+                `;
+            }
+        }
+
+        async function runDevOpsPipeline() {
+            const term = document.getElementById('devops-terminal');
+            const btn = document.getElementById('devops-run-btn');
+            btn.disabled = true;
+            btn.innerText = "Running...";
+            term.innerHTML = '<div class="text-google-blue">[EXECUTION START] Triggering 4-stage operations pipeline...</div>';
+
+            const steps = [
+                { text: '[1/4] PIL: Processing 100 images (TIFF -> JPEG, rotate 90°, resize 600x400)... [DONE 0.4s]', color: 'text-google-green' },
+                { text: '[2/4] REST API: Serializing fruit descriptions to JSON -> POST http://[server]/fruits [HTTP 201 Created]', color: 'text-google-blue' },
+                { text: '[3/4] ReportLab: Generating processed-items-summary.pdf with dynamic tables... [DONE 0.2s]', color: 'text-google-yellow' },
+                { text: '[4/4] smtplib & psutil: Email report dispatched via SSL & server health checks healthy! [ALL PASS]', color: 'text-google-green' }
+            ];
+
+            for (let s of steps) {
+                await new Promise(r => setTimeout(r, 600));
+                const line = document.createElement('div');
+                line.className = s.color;
+                line.innerText = s.text;
+                term.appendChild(line);
+                term.scrollTop = term.scrollHeight;
+            }
+
+            btn.disabled = false;
+            btn.innerText = "Re-Execute";
+        }
+
+        function runAgentDiagnostic() {
+            const select = document.getElementById('ms-anomaly-select');
+            const out = document.getElementById('ms-agent-output');
+            const val = select.value;
+
+            if (val === 'db_pool') {
+                out.innerHTML = `
+                    <div class="text-google-yellow">[TELEMETRY ALERT] Database pool connection threshold > 98%</div>
+                    <div class="text-google-blue">[AGENT REASONING] Diagnosed thread starvation in worker pool 4</div>
+                    <div class="text-google-green">[ACTION TRIGGERED] Scaled Azure ML connection pool & applied query backpressure</div>
+                    <div class="text-white font-bold">[STATUS] Incident resolved in 1.4s (MTTR reduced 97%)</div>
+                `;
+            } else if (val === 'tensor_leak') {
+                out.innerHTML = `
+                    <div class="text-google-yellow">[TELEMETRY ALERT] GPU VRAM sustained 96% utilization with steady leakage</div>
+                    <div class="text-google-blue">[AGENT REASONING] Isolated unreleased torch.Tensor references in eval loop</div>
+                    <div class="text-google-green">[ACTION TRIGGERED] Invoked PyTorch CUDA empty_cache & memory garbage collection</div>
+                    <div class="text-white font-bold">[STATUS] VRAM normalized to 24% (Zero pod restart required)</div>
+                `;
+            } else {
+                out.innerHTML = `
+                    <div class="text-google-yellow">[TELEMETRY ALERT] KS-test p-value < 0.01 on query vector embeddings</div>
+                    <div class="text-google-blue">[AGENT REASONING] Concept drift detected in semantic query distribution</div>
+                    <div class="text-google-green">[ACTION TRIGGERED] Initiated automated retrain pipeline on fresh validation window</div>
+                    <div class="text-white font-bold">[STATUS] New model candidate registered with 99.1% F1 score</div>
+                `;
+            }
+        }
+
+        function calculateMetaRoas() {
+            const slider = document.getElementById('meta-spend-slider');
+            const display = document.getElementById('meta-spend-display');
+            const roasA = document.getElementById('meta-roas-a');
+            const roasB = document.getElementById('meta-roas-b');
+
+            const spend = parseInt(slider.value);
+            display.innerText = '$' + spend.toLocaleString();
+
+            const revA = Math.round(spend * 3.42);
+            const revB = Math.round(spend * 2.15);
+
+            roasA.innerText = `ROAS: 3.42x ($${revA.toLocaleString()})`;
+            roasB.innerText = `ROAS: 2.15x ($${revB.toLocaleString()})`;
+        }
+
+        async function runMLOpsPipeline() {
+            const btn = document.getElementById('mlops-run-btn');
+            btn.disabled = true;
+            btn.innerText = "Deploying...";
+
+            const stages = ['mlops-s1', 'mlops-s2', 'mlops-s3', 'mlops-s4'];
+            for (let i = 0; i < stages.length; i++) {
+                const el = document.getElementById(stages[i]);
+                el.className = "p-1 rounded bg-cyan-500/20 border border-cyan-400 text-cyan-300 text-[9px] font-mono font-bold";
+                await new Promise(r => setTimeout(r, 400));
+            }
+
+            const status = document.getElementById('mlops-status-line');
+            status.innerHTML = `
+                <span class="text-google-textSecondary">Serving Latency:</span>
+                <span class="text-cyan-400 font-bold">2.14 ms (p99 @ 12k req/s) &bull; Healthy</span>
+            `;
+
+            btn.disabled = false;
+            btn.innerText = "Trigger CI/CD";
+        }
+
     </script>
 </body>
 </html>

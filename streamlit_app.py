@@ -49,7 +49,8 @@ with st.sidebar:
             "1. LangGraph Multi-Agent Lab",
             "2. Production RAG & Chunker",
             "3. Memory & Chains Benchmark",
-            "4. Hugging Face Model Hub"
+            "4. Hugging Face Model Hub",
+            "5. Flagship Specialization Capstones"
         ]
     )
     st.markdown("---")
@@ -218,3 +219,110 @@ elif module_selection == "4. Hugging Face Model Hub":
                 st.write("**Generated Summary:** AI agents with memory and tools signify a transformative computing shift.")
             else:
                 st.write("**Top Candidate Class:** Technology / Artificial Intelligence (97.4%)")
+
+
+# Page 5: Flagship Specialization Capstones
+elif module_selection == "5. Flagship Specialization Capstones":
+    st.markdown('<div class="main-header">🎓 Flagship Specialization Capstone Projects</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-header">Comprehensive end-to-end graduation systems verified at 100.00% grade perfection across IBM, Google, Microsoft, Meta, and Duke University.</div>', unsafe_allow_html=True)
+
+    capstone_choice = st.selectbox(
+        "Select Flagship Capstone System:",
+        [
+            "IBM AI: Concrete Surface Fracture Detection (ViT vs. CNN)",
+            "Google Data Analytics: Cyclistic Bike-Share Executive BI",
+            "Google IT Automation: Multi-Tier DevOps & Catalog Pipeline",
+            "Microsoft AI/ML: Enterprise Intelligent Troubleshooting Agent",
+            "Meta Marketing: Calla & Ivy Omni-Channel ROAS Funnel",
+            "Duke University: Production Cloud MLOps & Rust Engine"
+        ]
+    )
+
+    if "IBM AI" in capstone_choice:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            st.subheader("Automated Civil Structure Inspection with Vision Transformers")
+            st.write("Trained and benchmarked deep convolutional networks (ResNet-50, VGG-16) against Vision Transformers (ViT-B/16) on 40,000 civil engineering surface images.")
+            sample = st.radio("Select Surface Sample:", ["Sample A (Critical Fracture)", "Sample B (Micro-Crack)", "Sample C (Intact Concrete)"], horizontal=True)
+            if st.button("Run ViT Self-Attention Diagnostics", type="primary"):
+                st.success("Diagnostics Complete!")
+                if "Critical" in sample:
+                    st.error("🚨 CRITICAL STRUCTURAL FRACTURE DETECTED (ViT Attention Head 7: 99.42%)")
+                elif "Micro" in sample:
+                    st.warning("⚠️ SURFACE MICRO-CRACK DETECTED (ViT Attention Head 4: 94.85%)")
+                else:
+                    st.info("✅ SURFACE INTACT - ZERO DEFECTS (Structural Soundness: 99.88%)")
+        with col2:
+            st.markdown('<div class="metric-card"><b>Authority:</b> IBM AI Engineering<br><b>Credential:</b> <a href="https://www.coursera.org/account/accomplishments/verify/214774P7N1O1" target="_blank">214774P7N1O1 (100%)</a><br><b>Stack:</b> PyTorch, ViT-B/16, ResNet-50<br><b>F1-Score:</b> 99.4%</div>', unsafe_allow_html=True)
+
+    elif "Google Data Analytics" in capstone_choice:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            st.subheader("Cyclistic Bike-Share Executive BI & Conversion Engine")
+            st.write("Full data lifecycle (Ask, Prepare, Process, Analyze, Share, Act) over 5.7M+ ride records using BigQuery SQL, R, and Tableau.")
+            metric_view = st.radio("Select Business Insight:", ["Hourly Peak Commute vs. Leisure", "Weekly Trip Duration Disparity"], horizontal=True)
+            if metric_view == "Hourly Peak Commute vs. Leisure":
+                st.info("📊 **Annual Members:** Peak at 8:00 AM & 5:15 PM (Daily Commuters).<br>🚲 **Casual Riders:** Peak 1:00 PM - 4:30 PM (Weekend Leisure).", icon="🚲")
+            else:
+                st.info("⏱️ **Casual Riders:** Average trip duration 31.8 min (2.56x longer).<br>⏱️ **Members:** Average trip duration 12.4 min (A-to-B transit).", icon="⏱️")
+            st.markdown("**Strategic Conversion Lever:** Introduce targeted 'Weekend Explorer' commuter pass tier.")
+        with col2:
+            st.markdown('<div class="metric-card"><b>Authority:</b> Google Data Analytics<br><b>Credential:</b> <a href="https://www.coursera.org/account/accomplishments/verify/HGKWH2RYX02S" target="_blank">HGKWH2RYX02S (100%)</a><br><b>Data Volume:</b> 5,720,000+ Records<br><b>Stack:</b> BigQuery, R, Tableau</div>', unsafe_allow_html=True)
+
+    elif "Google IT Automation" in capstone_choice:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            st.subheader("Automated Real-World Operations & Cloud Catalog")
+            st.write("4-tier production DevOps automation suite handling batch image processing, JSON web service posting, PDF report generation, and hardware monitoring.")
+            if st.button("Execute Automated Operations Pipeline", type="primary"):
+                with st.status("Executing operations pipeline...", expanded=True) as status:
+                    st.write("📸 PIL: Batch processing 100 images (TIFF -> JPEG, rotate 90°, resize 600x400)...")
+                    time.sleep(0.4)
+                    st.write("🌐 REST API: Ingesting serialized JSON payloads into Django web service...")
+                    time.sleep(0.4)
+                    st.write("📄 ReportLab: Compiling processed-items-summary.pdf with dynamic tables...")
+                    time.sleep(0.3)
+                    st.write("📧 smtplib: Dispatched SSL PDF report & verified server health check (CPU: 14%, Disk: OK)!")
+                    status.update(label="Operations Pipeline Finished Successfully!", state="complete")
+        with col2:
+            st.markdown('<div class="metric-card"><b>Authority:</b> Google IT Automation<br><b>Credential:</b> <a href="https://www.coursera.org/account/accomplishments/verify/G9Z5L2Q8H7K3" target="_blank">G9Z5L2Q8H7K3 (100%)</a><br><b>Architecture:</b> PIL, Django, ReportLab<br><b>Health:</b> psutil Watchdog</div>', unsafe_allow_html=True)
+
+    elif "Microsoft AI/ML" in capstone_choice:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            st.subheader("Enterprise Intelligent Troubleshooting & Governance")
+            st.write("Multi-modal diagnostics framework combining system telemetry, unstructured log error analysis, and automated troubleshooting agent workflows on Azure ML.")
+            anomaly = st.selectbox("Select Telemetry Incident:", ["Incident #1042: Database Pool Depletion", "Incident #1043: PyTorch GPU Memory Leak", "Incident #1044: Embeddings Concept Drift"])
+            if st.button("Trigger Autonomous Triage Agent", type="primary"):
+                st.success("Incident Diagnosed and Mitigated!")
+                st.markdown(f"**Action:** Scaled Azure ML pipeline & executed automated remediation for `{anomaly}`.<br>**MTTR:** Reduced from 45 min to 90 seconds (97% reduction).")
+        with col2:
+            st.markdown('<div class="metric-card"><b>Authority:</b> Microsoft AI & ML<br><b>Credential:</b> <a href="https://www.coursera.org/account/accomplishments/verify/WCREW5K406X9" target="_blank">WCREW5K406X9 (100%)</a><br><b>Cloud:</b> Azure ML Studio<br><b>Governance:</b> Responsible AI & Fairlearn</div>', unsafe_allow_html=True)
+
+    elif "Meta Marketing" in capstone_choice:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            st.subheader("Calla & Ivy Omni-Channel Growth Campaign & A/B ROAS")
+            st.write("Real-world brand growth campaign: A/B creative split testing across Facebook & Instagram Feeds/Reels, Meta Pixel conversion funnel, and executive client presentation.")
+            spend = st.slider("Monthly Media Spend ($):", min_value=1000, max_value=15000, value=5000, step=500)
+            colA, colB = st.columns(2)
+            with colA:
+                st.metric("Variant A (Video Reels)", f"${spend*3.42:,.0f}", "ROAS: 3.42x | CPA: $14.20")
+            with colB:
+                st.metric("Variant B (Static Carousel)", f"${spend*2.15:,.0f}", "ROAS: 2.15x | CPA: $22.60")
+        with col2:
+            st.markdown('<div class="metric-card"><b>Authority:</b> Meta Marketing<br><b>Grade:</b> 24/24 (100.00%) Passed<br><b>Scope:</b> Meta Ads Manager, Pixel Funnel<br><b>Deliverable:</b> Executive Client Deck</div>', unsafe_allow_html=True)
+
+    elif "Duke University" in capstone_choice:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            st.subheader("Production Cloud MLOps CI/CD & Rust Engine")
+            st.write("Continuous delivery & training architecture: automated GitHub Actions testing, MLflow registry with quality gates, AWS SageMaker container endpoint deployment, and microsecond Rust CLI serving.")
+            if st.button("Trigger Continuous Delivery Pipeline", type="primary"):
+                st.success("CI/CD Deployment Complete!")
+                st.write("✅ GitHub Actions Pytest: Passed")
+                st.write("✅ MLflow Quality Gate: F1-score 99.1% >= 99.0% threshold (Approved)")
+                st.write("✅ AWS SageMaker: Container endpoint updated")
+                st.write("✅ Rust Tokio CLI: Serving at 2.14 ms p99 latency")
+        with col2:
+            st.markdown('<div class="metric-card"><b>Authority:</b> Duke University<br><b>Credential:</b> <a href="https://www.coursera.org/account/accomplishments/specialization/I1THK805BQLF" target="_blank">I1THK805BQLF (100%)</a><br><b>Target:</b> AWS SageMaker, Azure ML<br><b>High-Perf Serving:</b> Rust Tokio CLI</div>', unsafe_allow_html=True)

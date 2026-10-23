@@ -40,6 +40,20 @@ Each project has its own standalone repository with production code, Jupyter not
 
 ---
 
+## ⚡ Junior Applied AI & ML Engineering Suite (5 Dedicated Repos & Live Apps)
+
+Tailored hands-on implementations engineered for foundation AI & data science engineering roles, each equipped with its own dedicated interactive web demonstrator:
+
+| # | Project Name | Domain & UI Paradigm | Core ML / DS Stack | Live Web App | Standalone Repo |
+|---|---|---|---|:---:|:---:|
+| 1 | **Scikit-Learn Classification Arena** | Model Playground: Live decision boundaries, probability gauges & confusion matrix | Scikit-Learn (Random Forest, SVM, XGBoost) | [Launch App ↗](https://eng-ahmed-rifai.github.io/Scikit-Learn-Classification-Arena/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Scikit-Learn-Classification-Arena) |
+| 2 | **Scikit-Learn Regression Estimator** | Continuous Forecasting: Feature elasticity sliders, confidence bands & residual analysis | GradientBoostingRegressor, Quantile Loss | [Launch App ↗](https://eng-ahmed-rifai.github.io/Scikit-Learn-Regression-Estimator/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Scikit-Learn-Regression-Estimator) |
+| 3 | **Healthcare Risk Predictor (XGBoost)** | Clinical Risk Triage: Imbalanced biomedical data, cutoff $\tau=0.35$ tuning & factor radar | Cost-sensitive XGBoost, Recall Opt | [Launch App ↗](https://eng-ahmed-rifai.github.io/Healthcare-Risk-Predictor-XGBoost/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Healthcare-Risk-Predictor-XGBoost) |
+| 4 | **Pandas Data Wrangling & EDA Lab** | Pipeline Stepper: 4-stage data cleaning, missing imputation & IQR outlier winsorization | Pandas, NumPy, Data Quality Audit | [Launch App ↗](https://eng-ahmed-rifai.github.io/Pandas-Data-Wrangling-EDA-Lab/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Pandas-Data-Wrangling-EDA-Lab) |
+| 5 | **AWS AutoGluon AutoML Benchmark** | Benchmark Studio: Multi-model ensembling, leaderboard ranking & Pareto frontier | AutoGluon TabularPredictor, Stacking | [Launch App ↗](https://eng-ahmed-rifai.github.io/AWS-AutoGluon-AutoML-Benchmark/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/AWS-AutoGluon-AutoML-Benchmark) |
+
+---
+
 ## 🏗️ Master Architecture: LangGraph Cyclic State Machine
 
 ```mermaid

@@ -51,6 +51,7 @@ Tailored hands-on implementations engineered for foundation AI & data science en
 | 3 | **Healthcare Risk Predictor (XGBoost)** | Clinical Risk Triage: Imbalanced biomedical data, cutoff $\tau=0.35$ tuning & factor radar | Cost-sensitive XGBoost, Recall Opt | [Launch App ↗](https://eng-ahmed-rifai.github.io/Healthcare-Risk-Predictor-XGBoost/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Healthcare-Risk-Predictor-XGBoost) |
 | 4 | **Pandas Data Wrangling & EDA Lab** | Pipeline Stepper: 4-stage data cleaning, missing imputation & IQR outlier winsorization | Pandas, NumPy, Data Quality Audit | [Launch App ↗](https://eng-ahmed-rifai.github.io/Pandas-Data-Wrangling-EDA-Lab/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Pandas-Data-Wrangling-EDA-Lab) |
 | 5 | **AWS AutoGluon AutoML Benchmark** | Benchmark Studio: Multi-model ensembling, leaderboard ranking & Pareto frontier | AutoGluon TabularPredictor, Stacking | [Launch App ↗](https://eng-ahmed-rifai.github.io/AWS-AutoGluon-AutoML-Benchmark/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/AWS-AutoGluon-AutoML-Benchmark) |
+| 6 | **Gemini Pro Streamlit on Cloud Run** | Serverless LLM microservice: Streamlit UI + Vertex AI Gemini Pro deployed on Cloud Run | Python, Docker, Cloud Run, Vertex AI | [Launch App ↗](https://eng-ahmed-rifai.github.io/AI-Engineering-Interactive-Portfolio/) | [View Repo ↗](https://github.com/Eng-Ahmed-Rifai/Gemini-Pro-CloudRun-Streamlit) |
 
 ---
 

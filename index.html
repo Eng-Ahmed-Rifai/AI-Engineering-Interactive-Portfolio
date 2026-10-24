@@ -119,7 +119,7 @@
 
             <div class="mb-2 text-[11px] font-medium text-google-green uppercase tracking-wider flex items-center justify-center space-x-1">
                 <i class="fas fa-sparkles text-[10px]"></i>
-                <span>Junior Applied AI & ML Engineering Suite (5 Live Demos)</span>
+                <span>Junior Applied AI & ML Engineering Suite (6 Production Repos & Live Demos)</span>
             </div>
             <div class="flex flex-wrap justify-center gap-2 text-xs">
                 <a href="https://eng-ahmed-rifai.github.io/Scikit-Learn-Classification-Arena/" target="_blank" class="px-3 py-1.5 rounded-full bg-google-blue/10 hover:bg-google-blue/20 border border-google-blue/40 text-google-blue transition flex items-center space-x-1.5">
@@ -141,6 +141,10 @@
                 <a href="https://eng-ahmed-rifai.github.io/AWS-AutoGluon-AutoML-Benchmark/" target="_blank" class="px-3 py-1.5 rounded-full bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/40 text-purple-400 transition flex items-center space-x-1.5">
                     <i class="fas fa-play text-[9px]"></i>
                     <span>5. AutoGluon Benchmark</span>
+                </a>
+                <a href="https://github.com/Eng-Ahmed-Rifai/Gemini-Pro-CloudRun-Streamlit" target="_blank" class="px-3 py-1.5 rounded-full bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/40 text-blue-400 transition flex items-center space-x-1.5">
+                    <i class="fas fa-cloud text-[9px]"></i>
+                    <span>6. Gemini Pro on Cloud Run</span>
                 </a>
             </div>
         </div>
@@ -167,7 +171,7 @@
             </button>
             <button onclick="switchTab('junior-suite')" id="btn-junior-suite" class="px-4 py-2.5 rounded-t-lg font-medium text-google-textSecondary hover:text-white transition flex items-center space-x-2 whitespace-nowrap">
                 <i class="fas fa-cubes-stacked text-xs text-google-green"></i>
-                <span>5. Junior Applied ML Suite (5 Apps)</span>
+                <span>5. Junior Applied ML & Cloud Suite (6 Projects)</span>
             </button>
             <button onclick="switchTab('capstones')" id="btn-capstones" class="px-4 py-2.5 rounded-t-lg font-medium text-google-textSecondary hover:text-white transition flex items-center space-x-2 whitespace-nowrap">
                 <i class="fas fa-graduation-cap text-xs text-google-yellow"></i>
@@ -727,6 +731,76 @@
                     </div>
                     <div class="pt-4 border-t border-google-border text-center">
                         <span class="text-[11px] font-mono text-google-green">Verified against Coursera Industry Guided Projects</span>
+                    </div>
+                </div>
+
+
+                <!-- 6. Gemini Pro Streamlit on Cloud Run -->
+                <div class="bg-google-surface border border-google-border rounded-xl p-5 flex flex-col justify-between hover:border-google-blue/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-google-blue/15 text-google-blue border border-google-blue/30">
+                                Project 6 · Serverless LLM Microservice
+                            </span>
+                            <span class="text-[10px] font-mono text-google-textSecondary">GSP1229 · Cloud Run</span>
+                        </div>
+                        <h4 class="text-sm font-medium text-white mb-1.5 flex items-center space-x-1.5">
+                            <i class="fas fa-cloud text-google-blue text-xs"></i>
+                            <span>Gemini Pro Streamlit on Cloud Run</span>
+                        </h4>
+                        <p class="text-xs text-google-textSecondary leading-relaxed mb-4">
+                            Containerized Streamlit generative AI web application integrated with Google Gemini Pro (Vertex AI SDK), serverlessly deployed on Google Cloud Run with automated Cloud Build artifact pipelines.
+                        </p>
+
+                        <!-- Interactive Simulator -->
+                        <div class="bg-google-card border border-google-border rounded-lg p-3 mb-4 space-y-3">
+                            <div class="text-[11px] font-medium text-white flex items-center justify-between">
+                                <span><i class="fas fa-sliders text-google-blue mr-1"></i> Cloud Run Vertex AI Simulator</span>
+                                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-google-surface text-google-green border border-google-green/30">HTTPS :8080</span>
+                            </div>
+                            <div>
+                                <label class="text-[10px] text-google-textSecondary block mb-1">Prompt Input:</label>
+                                <input type="text" id="gemini-prompt-input" value="Explain how Cloud Run scales containers from 0 to 1000 instances automatically." class="w-full bg-google-surface border border-google-border rounded px-2.5 py-1.5 text-xs text-white focus:outline-none focus:border-google-blue">
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-[10px]">
+                                <div>
+                                    <span class="text-google-textSecondary">Temperature:</span>
+                                    <span id="gemini-temp-val" class="font-mono text-google-blue ml-1">0.7</span>
+                                    <input type="range" id="gemini-temp-slider" min="0" max="1" step="0.1" value="0.7" class="w-full h-1 bg-google-border rounded mt-1 accent-google-blue" oninput="document.getElementById('gemini-temp-val').innerText = this.value">
+                                </div>
+                                <div>
+                                    <span class="text-google-textSecondary">Top-P:</span>
+                                    <span id="gemini-topp-val" class="font-mono text-google-yellow ml-1">0.95</span>
+                                    <input type="range" id="gemini-topp-slider" min="0.1" max="1" step="0.05" value="0.95" class="w-full h-1 bg-google-border rounded mt-1 accent-google-yellow" oninput="document.getElementById('gemini-topp-val').innerText = this.value">
+                                </div>
+                            </div>
+                            <button onclick="runGeminiSimulation()" class="w-full py-1.5 rounded bg-google-blue/15 hover:bg-google-blue/25 text-google-blue text-xs font-medium border border-google-blue/30 transition flex items-center justify-center space-x-1.5">
+                                <i class="fas fa-bolt text-[10px]"></i>
+                                <span>Generate Response (Cloud Run Stream)</span>
+                            </button>
+                            <div id="gemini-sim-output" class="bg-google-surface border border-google-border rounded p-2.5 text-[11px] font-mono text-google-textSecondary space-y-1">
+                                <div class="text-google-green"><i class="fas fa-circle-check text-[9px] mr-1"></i> Cloud Run Container Ready (Revision 1)</div>
+                                <div class="text-[10px] text-google-textSecondary">Ready to process incoming Vertex AI Gemini Pro queries.</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-1.5 mb-4 text-[11px]">
+                            <span class="px-2 py-0.5 rounded bg-google-card text-google-textSecondary border border-google-border font-mono">Streamlit 1.35</span>
+                            <span class="px-2 py-0.5 rounded bg-google-card text-google-textSecondary border border-google-border font-mono">Gemini Pro</span>
+                            <span class="px-2 py-0.5 rounded bg-google-card text-google-textSecondary border border-google-border font-mono">Cloud Run</span>
+                            <span class="px-2 py-0.5 rounded bg-google-card text-google-textSecondary border border-google-border font-mono">Docker</span>
+                            <span class="px-2 py-0.5 rounded bg-google-card text-google-textSecondary border border-google-border font-mono">Cloud Build</span>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-google-border flex items-center justify-between">
+                        <a href="https://github.com/Eng-Ahmed-Rifai/Gemini-Pro-CloudRun-Streamlit" target="_blank" class="text-xs text-google-blue hover:text-white transition flex items-center space-x-1 font-medium">
+                            <i class="fab fa-github"></i>
+                            <span>Repository & Code</span>
+                        </a>
+                        <span class="text-[11px] text-google-green font-medium flex items-center space-x-1">
+                            <i class="fas fa-check-circle text-[10px]"></i>
+                            <span>Production Ready</span>
+                        </span>
                     </div>
                 </div>
 
@@ -1605,5 +1679,29 @@
         }
 
     </script>
-</body>
+
+    <script>
+    function runGeminiSimulation() {
+        const prompt = document.getElementById('gemini-prompt-input').value;
+        const temp = document.getElementById('gemini-temp-slider').value;
+        const topp = document.getElementById('gemini-topp-slider').value;
+        const out = document.getElementById('gemini-sim-output');
+        
+        out.innerHTML = '<div class="text-google-yellow"><i class="fas fa-spinner fa-spin mr-1"></i> Routing to Cloud Run Container :8080 -> Vertex AI Gemini Pro...</div>';
+        
+        setTimeout(() => {
+            out.innerHTML = `
+                <div class="text-google-green font-medium mb-1"><i class="fas fa-check-circle mr-1"></i> 200 OK (242ms) · Vertex AI Gemini Pro Response:</div>
+                <div class="text-white text-[11px] bg-google-card p-2 rounded border border-google-border/70 leading-relaxed">
+                    "Google Cloud Run dynamically scales container instances based on incoming request concurrency (default 80 concurrent connections per container). When traffic surges, Cloud Run provisions new container instances within milliseconds, scaling up to 1,000 instances automatically, and scales down to zero when idle to achieve 100% cost efficiency."
+                </div>
+                <div class="text-[9px] text-google-textSecondary mt-1 flex justify-between">
+                    <span>Model: gemini-pro (Temp: ${temp}, Top-P: ${topp})</span>
+                    <span>Region: us-central1 (Managed)</span>
+                </div>
+            `;
+        }, 600);
+    }
+    </script>
+    </body>
 </html>
